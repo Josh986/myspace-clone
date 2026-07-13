@@ -1,10 +1,28 @@
-# 💿 MySpace Clone — 2006 Emo/Scene Profile
+# 💼 MySpace-Themed Career Profile
 
-A pixel-perfect, single-page recreation of a classic **MySpace profile (2005–2008 era)**.
+A pixel-perfect, single-page **career / resume page disguised as a classic MySpace profile (2005–2008 era)**.
 Pure **HTML5 + CSS3 + vanilla JavaScript** — no frameworks, no build step, no dependencies.
 Drop it on GitHub Pages and it just works.
 
-Default profile: **`xX_StarlightEmo_Xx`** — black eyeliner, band tees, MCR on the profile song, and a Top 8 that means everything. 🖤
+Live profile: **Joshua Ly** — Technical Business Analyst on a Product Owner track. Every nostalgic MySpace module has been repurposed to showcase real professional experience. 🖥️
+
+---
+
+## 🎭 The twist — how MySpace maps to a resume
+
+| MySpace element | Career-page purpose |
+|-----------------|---------------------|
+| Display name + headline | Your name + professional tagline |
+| Mood → **Status** | `Open to Work` availability badge (blinking green) |
+| Profile photo | Headshot / monogram avatar |
+| Contact box | Real links: email, LinkedIn, phone, resume, portfolio |
+| MySpace URL | Your LinkedIn vanity URL |
+| Blurbs (About Me / Who I'd like to meet) | Professional summary + target roles |
+| **Professional Experience** module | Job history timeline (role, company, dates, impact) |
+| Friend Space → **Toolbox** | "Top 8 Tools" grid (Jira, Confluence, Miro, …) |
+| Interests → **Skills & Expertise** | Categorized skill groups |
+| Details table | Title, track, experience, certification, education, location |
+| Comments wall → **Career Highlights** | Signature achievements & project wins |
 
 ---
 
@@ -27,7 +45,6 @@ Everything uses **relative paths**, so it's GitHub Pages ready out of the box.
    git clone https://github.com/<your-username>/<your-repo>.git
    cd <your-repo>
    ```
-   (Or click **Fork** at the top-right of the GitHub page.)
 
 2. Push it to your own GitHub repository (if you cloned it fresh):
    ```bash
@@ -58,66 +75,81 @@ with `var PROFILE = {`, and edit the values. Save, refresh — done. No build st
 
 ```js
 var PROFILE = {
-  name: "xX_StarlightEmo_Xx",
-  headline: "\"the world is ugly, but you're beautiful to me...\" ♥",
-  mood: "emo",
-  photo: "https://i.pinimg.com/736x/2d/a6/26/2da626c120150dc33e7cc6da7b40eb92.jpg",
+  // ---- Basic identity ----
+  name: "Joshua Ly",
+  headline: "\"Translating complex business needs into clear technical solutions.\" ★",
+  mood: "Open to Work",
+  photo: "https://ui-avatars.com/api/?name=Joshua+Ly&size=250&background=33547a&color=ffffff",
 
-  age: 22,
-  gender: "Female",
-  location: "Los Angeles, CA",
-  status: "Single",
-  zodiac: "Scorpio",
-  lastLogin: "7/13/2026",
+  // ---- Details table ----
+  title: "Technical Business Analyst",
+  track: "Product Owner Track",
+  experience: "5+ Years",
+  certification: "UT Austin Gold Seal (BA)",
+  education: "B.A. — UT Austin",
+  location: "Pasadena, TX",
 
-  online: true,              // true = blinking green "Online Now!" dot
-  profileViews: "14,892",    // retro visitor counter
+  online: true,              // true = blinking green "Open to Work!" dot
+  profileViews: "5,281",     // retro visitor counter
 
-  song: {
-    title: "My Chemical Romance - Welcome to the Black Parade",
-    src: "song.mp3"          // drop your own .mp3 next to index.html
-  },
+  // ---- Real contact links ----
+  email: "joshualy986@gmail.com",
+  phone: "(832) 640-1756",
+  linkedin: "https://www.linkedin.com/in/joshua-ly/",
 
-  aboutMe: "hey <3 im just a girl living in a black & white world...",
-  meet:    "anyone who gets the reference in my headline...",
+  song: { title: "Now Playing: \"Career Anthem\"", src: "song.mp3" },
 
+  aboutMe: "Technical Business Analyst on a Product Owner track...",
+  meet:    "Hiring managers with Business Analyst III / PO openings...",
+
+  // ---- Skills & Expertise ----
   interests: {
-    general:    "sleeping, mirror pics, Hot Topic, thrifting...",
-    music:      "MCR, Fall Out Boy, Paramore, Panic! at the Disco...",
-    movies:     "Donnie Darko, The Nightmare Before Christmas...",
-    television: "Invader Zim, Daria, MTV, Adult Swim",
-    books:      "The Perks of Being a Wallflower, Go Ask Alice...",
-    heroes:     "my mom, Gerard Way, Tim Burton"
+    business: "Requirements Gathering • User Stories • Gap Analysis...",
+    agile:    "Backlog Refinement • Sprint Planning • Agile Ceremonies...",
+    systems:  "ERP • MES • SCADA • RFID • SaaS • Azure AD • ManageEngine",
+    testing:  "UAT Planning • Test Scripts • Defect Triage • Regression...",
+    methods:  "Agile / Scrum • SDLC • BPMN • Data Validation • RCA"
   },
 
-  // Top 8 — add/remove entries freely (grid re-flows automatically)
+  // ---- Top 8 Tools (grid re-flows automatically) ----
   friends: [
-    { name: "Tom",            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Style_-_Wouldn%27t_It_Be_Nice.png/1280px-Style_-_Wouldn%27t_It_Be_Nice.png" },
-    { name: "xXbrokenDollXx", img: "https://image.aiavatarmaker.net/imgs/2026-02-11/linkedin-twitter-avatar-square-circle-crop.webp" }
-    // ...up to 8 (or more)
+    { name: "Jira",       img: "https://placehold.co/80x80/0052CC/ffffff?text=Jira" },
+    { name: "Confluence", img: "https://placehold.co/80x80/172B4D/ffffff?text=Conf" }
+    // ...up to 8
   ],
-  friendCount: 337
+  toolCount: 8,
+
+  // ---- Career highlights (comment-wall style) ----
+  highlights: [
+    { user: "MES SaaS Deployment", text: "Drove 99% user adoption of a new MES SaaS platform..." }
+  ],
+
+  // ---- Experience timeline ----
+  experienceList: [
+    { role: "IT Business Analyst", company: "The Lab Consulting",
+      dates: "Jul 2025 – Oct 2025", blurb: "Standardized requirements, documentation..." }
+  ]
 };
 ```
 
 ### Common tweaks
 
 - **Change your photo:** set `photo` to any image URL, or drop a file next to
-  `index.html` and use a relative path like `"me.jpg"`.
-- **Add a real profile song:** put an `.mp3` in the project folder and set
-  `song.src` to its filename (e.g. `"black-parade.mp3"`).
-- **Edit your Top 8:** add/remove objects in the `friends` array. The grid
+  `index.html` and use a relative path like `"headshot.jpg"`.
+- **Wire up the "Download Resume" link:** drop a `resume.pdf` in the folder and
+  point the contact link to it (see the `contactRows` array in the injection script).
+- **Edit your Top 8 Tools:** add/remove objects in the `friends` array. The grid
   automatically re-flows into rows of 4.
-- **Go offline:** set `online: false` to swap the blinking green dot for a
-  grey "Offline" label.
-- **Use `&` and `<` in text:** write them as `&amp;` and `&lt;` inside the
-  strings so they render correctly (the defaults already do this).
+- **Add jobs:** append objects to `experienceList`.
+- **Toggle availability:** set `online: false` to swap the blinking green
+  "Open to Work!" badge for a grey "Offline" label.
+- **Use `&` and `<` in text:** write them as `&amp;` and `&lt;` inside the strings.
 
 ---
 
 ## 🖌️ Style tweaks (optional)
 
-Want to change the colors? Open `style.css` and look for the MySpace palette:
+Open `style.css` and look for the MySpace palette:
 
 - Classic blue: `#6699CC`
 - Orange accent: `#FF6600`
@@ -130,8 +162,6 @@ and the background is a pure-CSS tiled pattern (no image files needed).
 
 ## 🧪 Run it locally
 
-No server needed — just open the file:
-
 ```bash
 # either double-click index.html, or:
 python3 -m http.server 8000
@@ -142,9 +172,8 @@ python3 -m http.server 8000
 
 ## 📜 Notes
 
-- Placeholder images come from [picsum.photos](https://picsum.photos) — swap in
-  your own anytime.
-- The profile song `src` is a placeholder; add your own `.mp3` to hear it.
-- Built for fun and nostalgia. Not affiliated with MySpace / Meta.
+- Tool/avatar tiles come from [placehold.co](https://placehold.co) and the
+  monogram from [ui-avatars.com](https://ui-avatars.com) — swap in your own anytime.
+- A retro career page for fun. Not affiliated with MySpace / Meta.
 
-**MySpace v3.0 | © 2006 MySpace Inc. All Rights Reserved** *(parody)*
+**MySpace v3.0 | © 2006-style layout · Joshua Ly · Career Profile** *(parody)*

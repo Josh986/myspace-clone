@@ -341,6 +341,47 @@ img { border: 0; }
 .commentClear { clear: both; }
 
 /* ==========================================================================
+   PROFESSIONAL EXPERIENCE MODULE  (career-page twist)
+   ========================================================================== */
+.jobRow {
+  border: 1px solid #b8cbe0;
+  background: #f4f8fc;
+  padding: 6px 8px;
+  margin-bottom: 8px;
+}
+.jobRow:last-child { margin-bottom: 0; }
+.jobHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px dotted #6699CC;
+  padding-bottom: 2px;
+  margin-bottom: 3px;
+}
+.jobRole {
+  font-weight: bold;
+  font-size: 11px;
+  color: #003399;
+}
+.jobDates {
+  font-size: 10px;
+  color: #666;
+  white-space: nowrap;
+}
+.jobCompany {
+  font-size: 10px;
+  font-style: italic;
+  color: #FF6600;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+.jobBlurb {
+  font-size: 10px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
    FOOTER / COPYRIGHT BAR
    ========================================================================== */
 #footer {

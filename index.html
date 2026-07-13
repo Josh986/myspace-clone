@@ -3,77 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=940">
-<title>xX_StarlightEmo_Xx | MySpace</title>
+<title>Joshua Ly | MySpace</title>
 <link rel="stylesheet" href="style.css">
 
 <!-- ============================================================= -->
 <!-- ===============  EDIT YOUR PROFILE HERE  ==================== -->
+<!-- A career page dressed up as a 2006 MySpace profile.          -->
 <!-- Everything swappable lives in this one JS object.            -->
 <!-- No build step needed - just edit and refresh the page.       -->
 <!-- ============================================================= -->
 <script>
 var PROFILE = {
   // ---- Basic identity ----
-  name: "xX_StarlightEmo_Xx",
-  headline: "\"the world is ugly, but you're beautiful to me...\" &#9829;",
-  mood: "emo",
-  moodIcon: "&#9829;", // shows next to the mood
-  photo: "https://cdn.prod.website-files.com/633a38706320c88f5e8c4ac8/6a469e785bcd72c52b70424a_COVER%20IMAGE%20COLLAGE%20CREDIT%20STANLEY%20KILONZO(2).png",
+  name: "Joshua Ly",
+  headline: "\"Translating complex business needs into clear technical solutions.\" &#9733;",
+  mood: "Open to Work",
+  moodIcon: "&#9733;", // shows next to the mood
+  photo: "https://ui-avatars.com/api/?name=Joshua+Ly&size=250&background=33547a&color=ffffff&font-size=0.4&bold=true",
 
-  // ---- General info table ----
-  age: 22,
-  gender: "Female",
-  location: "Los Angeles, CA",
-  status: "Single",
-  zodiac: "Scorpio",
-  lastLogin: "7/13/2026",
+  // ---- Details table (professional "General" info) ----
+  title: "Technical Business Analyst",
+  track: "Product Owner Track",
+  experience: "5+ Years",
+  certification: "UT Austin Gold Seal (BA)",
+  education: "B.A. &mdash; UT Austin",
+  location: "Pasadena, TX",
 
   // ---- Online status ----
   online: true,
 
   // ---- Visitor counter ----
-  profileViews: "14,892",
+  profileViews: "5,281",
 
-  // ---- Profile song (placeholder .mp3) ----
+  // ---- Contact links (real) ----
+  email: "joshualy986@gmail.com",
+  phone: "(832) 640-1756",
+  linkedin: "https://www.linkedin.com/in/joshua-ly/",
+
+  // ---- Profile song (placeholder / theme track) ----
   song: {
-    title: "My Chemical Romance - Welcome to the Black Parade",
+    title: "Now Playing: \"Career Anthem\" (add your own .mp3)",
     src: "song.mp3"
   },
 
   // ---- Blurbs ----
   aboutMe:
-    "hey &lt;3 im just a girl living in a black &amp; white world. i love " +
-    "staying up til 4am, black eyeliner, band tees, and taking pics in my " +
-    "bathroom mirror. music is my LIFE and if you dont get that then we " +
-    "prob wont click. dont be a hater, my comments are always open. " +
-    "xoxo stay beautiful &#9829;&#9829;&#9829;",
+    "Technical Business Analyst on a Product Owner track with 5+ years delivering " +
+    "SaaS, ERP, MES, and automation solutions across manufacturing, logistics, and " +
+    "operations environments. Certified through UT Austin's Gold Seal Certificate in " +
+    "Business Analysis, with advanced strengths in requirements engineering, Agile " +
+    "delivery, user story development, and process modeling. Known for translating " +
+    "complex business needs into clear technical solutions, supporting backlog " +
+    "refinement and prioritization, and driving high adoption of new systems &mdash; " +
+    "including a <strong>99% adoption rate</strong> for a new MES SaaS platform.",
   meet:
-    "anyone who gets the reference in my headline. people who arent fake. " +
-    "guitarists. Gerard Way (pls). someone to split a pair of earbuds with " +
-    "and watch the world burn. NO POSERS.",
+    "Hiring managers and teams with <strong>Business Analyst III</strong>, " +
+    "<strong>Technical Business Analyst</strong>, and <strong>Product Owner</strong> " +
+    "openings where strong analysis, structured problem-solving, and stakeholder " +
+    "alignment drive measurable business value. Let's connect. &#9733;",
 
-  // ---- Interests ----
+  // ---- Interests -> Skills & Expertise ----
   interests: {
-    general: "sleeping, mirror pics, Hot Topic, thrifting, sad movies, rain",
-    music: "MCR, Fall Out Boy, Paramore, Panic! at the Disco, The Used, AFI, Taking Back Sunday",
-    movies: "Donnie Darko, The Nightmare Before Christmas, Edward Scissorhands, Nightmare on Elm St",
-    television: "Invader Zim, Daria, MTV, Adult Swim",
-    books: "The Perks of Being a Wallflower, Go Ask Alice, poetry (mine mostly lol)",
-    heroes: "my mom, Gerard Way, Tim Burton"
+    business:  "Requirements Gathering &bull; User Stories &amp; Acceptance Criteria &bull; Gap Analysis &bull; Workflow Mapping &bull; BRDs/FRDs &bull; Data Mapping",
+    agile:     "Backlog Refinement &bull; Sprint Planning &bull; Agile Ceremonies (Planning, Reviews, Retros) &bull; Release Readiness &bull; Value &amp; Risk Tradeoffs",
+    systems:   "ERP (various) &bull; MES &bull; SCADA &bull; RFID &bull; SaaS Platforms &bull; Azure AD &bull; ManageEngine",
+    testing:   "UAT Planning &amp; Execution &bull; Test Scripts &bull; Defect Triage &bull; Regression &amp; Smoke Testing &bull; Release Validation",
+    methods:   "Agile / Scrum &bull; SDLC &bull; Process Modeling (BPMN) &bull; Data Validation &bull; Root Cause Analysis"
   },
 
-  // ---- Top 8 Friends (name + image) ----
+  // ---- Top 8 Tools (name + avatar tile) ----
   friends: [
-    { name: "Tom",            img: "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" },
-    { name: "xXbrokenDollXx", img: "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/132751722/original/6e6f76bc9bfe0271f99b455e042f8227da628f4e/draw-pixel-art-of-your-characters.png" },
-    { name: "GhostTownKid",   img: "https://placehold.co/1200x600/e2e8f0/1e293b?text=profile_image_avatar_for_user_GhostTownKid__80x80_" },
-    { name: "razorheart_92",  img: "https://placehold.co/1200x600/e2e8f0/1e293b?text=80x80_pixel_profile_avatar_image_corresponding_to_" },
-    { name: "NeonGrave",      img: "https://placehold.co/1200x600/e2e8f0/1e293b?text=A_small_80x80_pixel_random_profile_avatar_image_as" },
-    { name: "sk8rgrl_666",    img: "https://placehold.co/1200x600/e2e8f0/1e293b?text=80x80_pixel_random_avatar_image_representing_user_" },
-    { name: "VelvetTears",    img: "https://placehold.co/1200x600/e2e8f0/1e293b?text=80x80_pixel_user_avatar_image_for_the_username_Vel" },
-    { name: "the_lost_boy",   img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Profile_avatar_placeholder_large.png/250px-Profile_avatar_placeholder_large.png" }
+    { name: "Jira",       img: "https://placehold.co/80x80/0052CC/ffffff?text=Jira&font=source-sans-pro" },
+    { name: "Confluence", img: "https://placehold.co/80x80/172B4D/ffffff?text=Conf&font=source-sans-pro" },
+    { name: "MIRO",       img: "https://placehold.co/80x80/FFD02F/050038?text=Miro&font=source-sans-pro" },
+    { name: "Lucidchart", img: "https://placehold.co/80x80/F26D00/ffffff?text=Lucid&font=source-sans-pro" },
+    { name: "Power BI",   img: "https://placehold.co/80x80/F2C811/000000?text=PBI&font=source-sans-pro" },
+    { name: "Tableau",    img: "https://placehold.co/80x80/1F457E/ffffff?text=Tab&font=source-sans-pro" },
+    { name: "MS Excel",   img: "https://placehold.co/80x80/217346/ffffff?text=Excel&font=source-sans-pro" },
+    { name: "Figma",      img: "https://placehold.co/80x80/1E1E1E/ffffff?text=Figma&font=source-sans-pro" }
   ],
-  friendCount: 337
+  toolCount: 8,
+
+  // ---- Career highlights (styled like the old comments wall) ----
+  highlights: [
+    { user: "MES SaaS Deployment",          text: "Drove <strong>99% user adoption</strong> of a new MES SaaS platform through comprehensive UAT, training, and SOP development across plant operations." },
+    { user: "IT Asset Management Redesign",  text: "Rebuilt asset lifecycle workflows across Azure AD &amp; ManageEngine, improving audit compliance and eliminating recurring data mismatches." },
+    { user: "Oil &amp; Gas Logistics Automation", text: "Led discovery with executives &amp; dispatch teams to map end-to-end logistics workflows and convert them into automation requirements." },
+    { user: "Documentation &amp; Enablement", text: "Authored <strong>20+ SOPs</strong>, reference guides, and training materials &mdash; improving system adoption, audit readiness, and operational efficiency." }
+  ],
+
+  // ---- Experience timeline ----
+  experienceList: [
+    { role: "IT Business Analyst",  company: "The Lab Consulting",              dates: "Jul 2025 &ndash; Oct 2025",
+      blurb: "Standardized requirements, documentation, and test practices across multiple projects, strengthening reporting accuracy and operational decision-making for client leadership." },
+    { role: "IT Business Analyst",  company: "QADworks (SCADA &amp; MES Services)", dates: "Jun 2022 &ndash; Jul 2025",
+      blurb: "Led end-to-end requirements analysis for ERP- and MES-integrated SaaS solutions. Authored user stories, acceptance criteria, and data mappings; owned UAT cycles across MES, ERP, SCADA, and RFID systems." },
+    { role: "Business Analyst",     company: "QADworks (Manufacturing, Oil &amp; Gas, Financial Ops)", dates: "Jun 2020 &ndash; Jun 2022",
+      blurb: "Conducted process analysis and requirements gathering for upgrades, workflow redesign, and automation. Authored BRDs/FRDs and facilitated Agile ceremonies for multi-site deployments across North America." }
+  ]
 };
 </script>
 </head>
@@ -83,9 +110,9 @@ var PROFILE = {
 <div id="msTopBar">
   <div class="msTopInner">
     <span class="msLogo">my<strong>space</strong>.</span>
-    <span class="msTagline">a place for friends</span>
+    <span class="msTagline">a place for careers</span>
     <span class="msTopLinks">
-      Home&nbsp;|&nbsp;Browse&nbsp;|&nbsp;Search&nbsp;|&nbsp;Invite&nbsp;|&nbsp;Film&nbsp;|&nbsp;Mail&nbsp;|&nbsp;Blog&nbsp;|&nbsp;Favorites&nbsp;|&nbsp;Forum&nbsp;|&nbsp;Groups&nbsp;|&nbsp;Events&nbsp;|&nbsp;Videos&nbsp;|&nbsp;Music
+      Home&nbsp;|&nbsp;Browse&nbsp;|&nbsp;Search&nbsp;|&nbsp;Invite&nbsp;|&nbsp;Resume&nbsp;|&nbsp;Mail&nbsp;|&nbsp;Blog&nbsp;|&nbsp;Favorites&nbsp;|&nbsp;Forum&nbsp;|&nbsp;Groups&nbsp;|&nbsp;Events&nbsp;|&nbsp;Skills&nbsp;|&nbsp;Network
     </span>
   </div>
 </div>
@@ -110,7 +137,7 @@ var PROFILE = {
         <div class="photoBox">
           <img id="profilePhoto" src="" alt="profile photo">
           <div class="photoCaption" id="photoName"></div>
-          <div class="photoMood">Mood: <span id="moodText"></span> <span id="moodIcon"></span></div>
+          <div class="photoMood">Status: <span id="moodText"></span> <span id="moodIcon"></span></div>
         </div>
 
         <!-- Song player -->
@@ -129,24 +156,7 @@ var PROFILE = {
         <div class="module">
           <div class="moduleHeader">Contacting <span id="contactName"></span></div>
           <div class="moduleBody contactBody">
-            <table class="contactTable" cellpadding="0" cellspacing="0">
-              <tr>
-                <td><a href="#" class="contactLink">&#9993; Send Message</a></td>
-                <td><a href="#" class="contactLink">&#9829; Add to Friends</a></td>
-              </tr>
-              <tr>
-                <td><a href="#" class="contactLink">&#9733; Add to Favorites</a></td>
-                <td><a href="#" class="contactLink">&#9993; Instant Message</a></td>
-              </tr>
-              <tr>
-                <td><a href="#" class="contactLink">&#9993; Forward to Friend</a></td>
-                <td><a href="#" class="contactLink">&#9873; Add to Group</a></td>
-              </tr>
-              <tr>
-                <td><a href="#" class="contactLink">&#9888; Block User</a></td>
-                <td><a href="#" class="contactLink">&#9734; Rank User</a></td>
-              </tr>
-            </table>
+            <table class="contactTable" cellpadding="0" cellspacing="0" id="contactTable"></table>
           </div>
         </div>
 
@@ -156,9 +166,9 @@ var PROFILE = {
           <div class="moduleBody urlBody" id="urlBody"></div>
         </div>
 
-        <!-- Interests -->
+        <!-- Interests / Skills -->
         <div class="module">
-          <div class="moduleHeader">Interests</div>
+          <div class="moduleHeader">Skills &amp; Expertise</div>
           <div class="moduleBody">
             <table class="infoTable" cellpadding="0" cellspacing="0" id="interestsTable"></table>
           </div>
@@ -188,7 +198,7 @@ var PROFILE = {
 
         <!-- Blurbs -->
         <div class="module">
-          <div class="moduleHeader">xX_StarlightEmo_Xx's Blurbs</div>
+          <div class="moduleHeader"><span id="blurbHeaderName"></span>'s Blurbs</div>
           <div class="moduleBody blurbBody">
             <div class="blurbLabel">About me:</div>
             <div class="blurbText" id="aboutMe"></div>
@@ -197,23 +207,29 @@ var PROFILE = {
           </div>
         </div>
 
-        <!-- Friend Space -->
+        <!-- Experience (styled like a MySpace module) -->
         <div class="module">
-          <div class="moduleHeader"><span id="friendHeaderName"></span>'s Friend Space
+          <div class="moduleHeader">Professional Experience</div>
+          <div class="moduleBody" id="experienceBody"></div>
+        </div>
+
+        <!-- Friend Space -> Top 8 Tools -->
+        <div class="module">
+          <div class="moduleHeader"><span id="friendHeaderName"></span>'s Toolbox
             (<span id="friendCount"></span>)</div>
           <div class="moduleBody friendBody">
             <div class="friendSub">
-              <span id="friendTopName"></span> has <strong id="friendCount2"></strong> friends.
+              <span id="friendTopName"></span> works daily with <strong id="friendCount2"></strong> core tools.
             </div>
-            <div class="topLabel">&#9733; xX_StarlightEmo_Xx's Top 8 &#9733;</div>
+            <div class="topLabel">&#9733; <span id="topLabelName"></span>'s Top 8 Tools &#9733;</div>
             <table class="friendGrid" cellpadding="0" cellspacing="0" id="friendGrid"></table>
-            <div class="viewAll"><a href="#" class="contactLink">View All of xX_StarlightEmo_Xx's Friends</a></div>
+            <div class="viewAll"><a href="#" class="contactLink">View Full Skills Matrix</a></div>
           </div>
         </div>
 
-        <!-- Comments -->
+        <!-- Career highlights (comments wall) -->
         <div class="module">
-          <div class="moduleHeader">xX_StarlightEmo_Xx's Friends Comments</div>
+          <div class="moduleHeader">Career Highlights</div>
           <div class="moduleBody commentBody" id="commentBody"></div>
         </div>
 
@@ -224,9 +240,9 @@ var PROFILE = {
   <!-- ===================== FOOTER ===================== -->
   <div id="footer">
     <div class="footerLinks">
-      About&nbsp;|&nbsp;FAQ&nbsp;|&nbsp;Terms&nbsp;|&nbsp;Privacy&nbsp;|&nbsp;Safety Tips&nbsp;|&nbsp;Contact MySpace&nbsp;|&nbsp;Promote&nbsp;|&nbsp;Advertise&nbsp;|&nbsp;MySpace International
+      About&nbsp;|&nbsp;FAQ&nbsp;|&nbsp;Terms&nbsp;|&nbsp;Privacy&nbsp;|&nbsp;Resume&nbsp;|&nbsp;Contact&nbsp;|&nbsp;LinkedIn&nbsp;|&nbsp;Portfolio&nbsp;|&nbsp;Print Profile
     </div>
-    <div class="footerCopy">MySpace v3.0 &nbsp;|&nbsp; &copy; 2006 MySpace Inc. All Rights Reserved</div>
+    <div class="footerCopy">MySpace v3.0 &nbsp;|&nbsp; &copy; 2006-style layout &nbsp;&middot;&nbsp; Joshua Ly &middot; Career Profile</div>
   </div>
 
 </div><!-- /wrapper -->
@@ -247,8 +263,10 @@ var PROFILE = {
   setHTML("headline", P.headline);
   setHTML("photoName", P.name);
   setHTML("contactName", P.name);
+  setHTML("blurbHeaderName", P.name);
   setHTML("friendHeaderName", P.name);
   setHTML("friendTopName", P.name);
+  setHTML("topLabelName", P.name);
   setHTML("moodText", P.mood);
   setHTML("moodIcon", P.moodIcon || "");
 
@@ -258,7 +276,7 @@ var PROFILE = {
   // ---- Online badge ----
   if (P.online) {
     setHTML("onlineBadge",
-      '<span class="onlineWrap"><span class="blinkDot"></span>Online Now!</span>');
+      '<span class="onlineWrap"><span class="blinkDot"></span>Open to Work!</span>');
   } else {
     setHTML("onlineBadge", '<span class="offlineWrap">Offline</span>');
   }
@@ -269,26 +287,49 @@ var PROFILE = {
   var player = document.getElementById("songPlayer");
   if (player && player.load) player.load();
 
+  // ---- Contact links (real) ----
+  var contactRows = [
+    ['&#9993; Send Message', 'mailto:' + P.email],
+    ['&#9829; Connect on LinkedIn', P.linkedin],
+    ['&#9742; Call ' + P.phone, 'tel:' + P.phone.replace(/[^0-9+]/g, '')],
+    ['&#9733; Add to Favorites', '#'],
+    ['&#8681; Download Resume', '#'],
+    ['&#9873; View Portfolio', '#'],
+    ['&#9993; Forward Profile', 'mailto:?subject=Joshua%20Ly%20-%20Technical%20Business%20Analyst'],
+    ['&#9734; Recommend', '#']
+  ];
+  var cRowsHTML = "";
+  for (var k = 0; k < contactRows.length; k += 2) {
+    cRowsHTML += "<tr>";
+    for (var j = k; j < k + 2 && j < contactRows.length; j++) {
+      var tgt = (contactRows[j][1].indexOf('http') === 0) ? ' target="_blank" rel="noopener"' : '';
+      cRowsHTML += '<td><a href="' + contactRows[j][1] + '"' + tgt +
+                   ' class="contactLink">' + contactRows[j][0] + '</a></td>';
+    }
+    cRowsHTML += "</tr>";
+  }
+  setHTML("contactTable", cRowsHTML);
+
   // ---- URL ----
   setHTML("urlBody",
-    "myspace.com/" + P.name.toLowerCase().replace(/[^a-z0-9_]/g, ""));
+    '<a href="' + P.linkedin + '" target="_blank" rel="noopener" class="contactLink">' +
+    "linkedin.com/in/joshua-ly</a>");
 
   // ---- Stats ----
   setHTML("viewCount", P.profileViews);
-  setHTML("lastLoginText", "Last Login: " + P.lastLogin);
+  setHTML("lastLoginText", "Available: Immediately &nbsp;|&nbsp; " + P.location);
 
   // ---- Blurbs ----
   setHTML("aboutMe", P.aboutMe);
   setHTML("meetText", P.meet);
 
-  // ---- Interests table ----
+  // ---- Skills table ----
   var interestRows = [
-    ["General", P.interests.general],
-    ["Music", P.interests.music],
-    ["Movies", P.interests.movies],
-    ["Television", P.interests.television],
-    ["Books", P.interests.books],
-    ["Heroes", P.interests.heroes]
+    ["Business &amp; Systems Analysis", P.interests.business],
+    ["Product &amp; Agile Delivery", P.interests.agile],
+    ["Technical Environment", P.interests.systems],
+    ["Testing &amp; Quality", P.interests.testing],
+    ["Methods", P.interests.methods]
   ];
   var iHTML = "";
   for (var i = 0; i < interestRows.length; i++) {
@@ -297,12 +338,13 @@ var PROFILE = {
   }
   setHTML("interestsTable", iHTML);
 
-  // ---- General table ----
+  // ---- Details table ----
   var genRows = [
-    ["Age", P.age],
-    ["Gender", P.gender],
-    ["Status", P.status],
-    ["Zodiac", P.zodiac],
+    ["Title", P.title],
+    ["Track", P.track],
+    ["Experience", P.experience],
+    ["Certification", P.certification],
+    ["Education", P.education],
     ["Location", P.location]
   ];
   var gHTML = "";
@@ -312,11 +354,26 @@ var PROFILE = {
   }
   setHTML("generalTable", gHTML);
 
-  // ---- Friend count ----
-  setHTML("friendCount", P.friendCount);
-  setHTML("friendCount2", P.friendCount);
+  // ---- Experience timeline ----
+  var eHTML = "";
+  for (var e = 0; e < P.experienceList.length; e++) {
+    var job = P.experienceList[e];
+    eHTML += '<div class="jobRow">' +
+               '<div class="jobHead">' +
+                 '<span class="jobRole">' + job.role + '</span>' +
+                 '<span class="jobDates">' + job.dates + '</span>' +
+               '</div>' +
+               '<div class="jobCompany">' + job.company + '</div>' +
+               '<div class="jobBlurb">' + job.blurb + '</div>' +
+             '</div>';
+  }
+  setHTML("experienceBody", eHTML);
 
-  // ---- Top 8 grid (4 per row) ----
+  // ---- Tool count ----
+  setHTML("friendCount", P.toolCount);
+  setHTML("friendCount2", P.toolCount);
+
+  // ---- Top 8 Tools grid (4 per row) ----
   var fHTML = "";
   for (var f = 0; f < P.friends.length; f++) {
     if (f % 4 === 0) fHTML += "<tr>";
@@ -331,21 +388,16 @@ var PROFILE = {
   if (P.friends.length % 4 !== 0) fHTML += "</tr>";
   setHTML("friendGrid", fHTML);
 
-  // ---- Fake comments ----
-  var comments = [
-    { user: P.friends[1] ? P.friends[1].name : "friend", text: "omg ur pics r so cute!! miss u &lt;3 comment back!!" },
-    { user: P.friends[2] ? P.friends[2].name : "friend", text: "we NEED to go to warped tour this summer!!! &#9829;" },
-    { user: P.friends[4] ? P.friends[4].name : "friend", text: "thx for the add babe. love the layout &#9733;" }
-  ];
+  // ---- Career highlights (comment-wall style) ----
   var cHTML = "";
-  for (var c = 0; c < comments.length; c++) {
-    var av = P.friends[(c * 2 + 1) % P.friends.length];
+  for (var c = 0; c < P.highlights.length; c++) {
     cHTML += '<div class="commentRow">' +
-               '<div class="commentAvatar"><img src="' + av.img + '" alt=""></div>' +
+               '<div class="commentAvatar"><img src="' +
+                 'https://placehold.co/50x50/33547a/ffffff?text=WIN&font=source-sans-pro" alt=""></div>' +
                '<div class="commentContent">' +
                  '<div class="commentUser"><a href="#" class="contactLink">' +
-                   comments[c].user + '</a></div>' +
-                 '<div class="commentText">' + comments[c].text + '</div>' +
+                   P.highlights[c].user + '</a></div>' +
+                 '<div class="commentText">' + P.highlights[c].text + '</div>' +
                '</div>' +
                '<div class="commentClear"></div>' +
              '</div>';
