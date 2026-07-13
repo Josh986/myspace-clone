@@ -1,0 +1,364 @@
+/* ==========================================================================
+   MySpace Default Style  --  v3.0 (2006)
+   Authentic emo/scene profile recreation.
+   ========================================================================== */
+
+/* MySpace Default Style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  /* dark tiled background feel via layered CSS gradients (no image files) */
+  background-color: #1a1a1a;
+  background-image:
+    linear-gradient(45deg, #222 25%, transparent 25%, transparent 75%, #222 75%, #222),
+    linear-gradient(45deg, #222 25%, transparent 25%, transparent 75%, #222 75%, #222);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+  font-family: Verdana, Arial, Tahoma, sans-serif;
+  font-size: 11px;
+  color: #000000;
+}
+
+a {
+  color: #003399;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #FF6600;
+}
+
+img { border: 0; }
+
+/* ==========================================================================
+   TOP MYSPACE NAVIGATION BAR
+   ========================================================================== */
+#msTopBar {
+  background: #6699CC;
+  background: linear-gradient(to bottom, #7aaedd 0%, #6699CC 50%, #4f81b5 100%);
+  border-bottom: 2px solid #33547a;
+  width: 100%;
+}
+.msTopInner {
+  width: 900px;
+  margin: 0 auto;
+  padding: 5px 8px;
+  color: #ffffff;
+}
+.msLogo {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #ffffff;
+  vertical-align: middle;
+}
+.msLogo strong { color: #FF6600; }
+.msTagline {
+  font-size: 10px;
+  font-style: italic;
+  color: #eaf1fb;
+  margin-left: 6px;
+}
+.msTopLinks {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+}
+
+/* ==========================================================================
+   MAIN 900px WRAPPER
+   ========================================================================== */
+#wrapper {
+  width: 900px;
+  margin: 10px auto 30px auto;
+  background: #ffffff;
+  border: 2px solid #33547a;
+  padding: 8px;
+}
+
+/* Name header + headline */
+#nameHeader {
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FF6600;
+  border-bottom: 2px solid #6699CC;
+  padding: 2px 0 4px 0;
+}
+#headline {
+  font-size: 11px;
+  font-style: italic;
+  color: #333333;
+  padding: 4px 0 8px 0;
+  border-bottom: 1px dashed #cccccc;
+  margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   ONLINE NOW! BLINKING GREEN DOT (CSS animation, no gif)
+   ========================================================================== */
+.onlineWrap {
+  font-size: 11px;
+  color: #339900;
+  font-weight: bold;
+  margin-left: 12px;
+  vertical-align: middle;
+}
+.offlineWrap {
+  font-size: 11px;
+  color: #999999;
+  font-weight: bold;
+  margin-left: 12px;
+}
+.blinkDot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #33ff33;
+  box-shadow: 0 0 4px #33ff33;
+  margin-right: 4px;
+  vertical-align: middle;
+  animation: blink 0.8s steps(1, end) infinite;
+}
+@keyframes blink {
+  0%, 50%   { opacity: 1; }
+  51%, 100% { opacity: 0.15; }
+}
+
+/* ==========================================================================
+   TWO-COLUMN TABLE LAYOUT
+   ========================================================================== */
+#layout { width: 100%; }
+#leftCol  { width: 300px; }
+.colGap   { width: 10px; }
+#rightCol { width: auto; }
+
+/* ==========================================================================
+   MODULE BOXES  (the classic bordered MySpace panels)
+   ========================================================================== */
+.module {
+  border: 1px solid #6699CC;
+  margin-bottom: 10px;
+  background: #ffffff;
+}
+/* --- CUSTOM CSS START --- */
+.moduleHeader {
+  /* classic blue gradient section header bar */
+  background: #6699CC;
+  background: linear-gradient(to bottom, #8fbce8 0%, #6699CC 55%, #4f81b5 100%);
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 11px;
+  padding: 3px 6px;
+  border-bottom: 1px solid #33547a;
+  text-shadow: 0 1px 0 #33547a;
+}
+/* --- CUSTOM CSS END --- */
+.moduleBody {
+  padding: 6px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   LEFT COLUMN - PHOTO BOX
+   ========================================================================== */
+.photoBox {
+  border: 1px solid #6699CC;
+  padding: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  background: #f4f8fd;
+}
+#profilePhoto {
+  width: 200px;
+  height: 250px;
+  border: 2px solid #333333;
+  display: block;
+  margin: 0 auto;
+}
+.photoCaption {
+  font-weight: bold;
+  font-size: 12px;
+  color: #FF6600;
+  margin-top: 5px;
+}
+.photoMood {
+  font-size: 10px;
+  color: #555555;
+  margin-top: 2px;
+}
+
+/* Song player */
+.songBody { text-align: center; }
+.songTitle {
+  font-size: 10px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+#songPlayer { width: 100%; height: 28px; }
+
+/* Contact box */
+.contactBody { padding: 4px; background: #eaf1fb; }
+.contactTable { width: 100%; }
+.contactTable td {
+  width: 50%;
+  padding: 3px 4px;
+  font-size: 10px;
+  vertical-align: top;
+}
+.contactLink {
+  color: #003399;
+  font-size: 10px;
+}
+.contactLink:hover { color: #FF6600; }
+
+/* URL box */
+.urlBody {
+  font-size: 10px;
+  color: #003399;
+  word-break: break-all;
+}
+
+/* Info tables (Interests / General) */
+.infoTable { width: 100%; border-collapse: collapse; }
+.infoTable td {
+  padding: 3px 5px;
+  font-size: 10px;
+  vertical-align: top;
+  border-bottom: 1px solid #e2e2e2;
+}
+.infoLabel {
+  background: #dfe9f5;
+  color: #33547a;
+  font-weight: bold;
+  width: 78px;
+  white-space: nowrap;
+}
+.infoValue { color: #222222; }
+
+/* ==========================================================================
+   RIGHT COLUMN
+   ========================================================================== */
+.statStrip {
+  background: #FF6600;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 3px 8px;
+  margin-bottom: 10px;
+  border: 1px solid #cc5200;
+  overflow: hidden;
+}
+.viewCounter {
+  float: right;
+  font-family: "Courier New", monospace;
+  letter-spacing: 1px;
+}
+
+/* Blurbs */
+.blurbBody { line-height: 1.6; }
+.blurbLabel {
+  color: #FF6600;
+  font-weight: bold;
+  font-size: 12px;
+  border-bottom: 1px solid #cccccc;
+  margin: 4px 0 5px 0;
+  padding-bottom: 2px;
+}
+.blurbText {
+  font-size: 11px;
+  color: #222222;
+  margin-bottom: 12px;
+}
+
+/* Friend Space */
+.friendSub {
+  font-size: 10px;
+  color: #555;
+  margin-bottom: 6px;
+}
+.topLabel {
+  text-align: center;
+  font-weight: bold;
+  color: #FF6600;
+  font-size: 12px;
+  margin: 4px 0 8px 0;
+}
+.friendGrid { width: 100%; }
+.friendCell {
+  width: 25%;
+  text-align: center;
+  padding: 6px 4px;
+  vertical-align: top;
+}
+.friendPic {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #6699CC;
+  padding: 2px;
+  background: #fff;
+}
+.friendName {
+  font-size: 10px;
+  margin-top: 3px;
+  word-break: break-word;
+}
+.viewAll {
+  text-align: right;
+  font-size: 10px;
+  margin-top: 6px;
+  border-top: 1px solid #dddddd;
+  padding-top: 4px;
+}
+
+/* Comments */
+.commentRow {
+  border-bottom: 1px solid #dddddd;
+  padding: 6px 2px;
+}
+.commentAvatar { float: left; width: 54px; }
+.commentAvatar img {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #6699CC;
+  padding: 1px;
+}
+.commentContent { margin-left: 58px; }
+.commentUser {
+  font-weight: bold;
+  font-size: 10px;
+  margin-bottom: 2px;
+}
+.commentText { font-size: 10px; color: #333; line-height: 1.5; }
+.commentClear { clear: both; }
+
+/* ==========================================================================
+   FOOTER / COPYRIGHT BAR
+   ========================================================================== */
+#footer {
+  margin-top: 12px;
+  border-top: 2px solid #6699CC;
+  padding-top: 8px;
+  text-align: center;
+}
+.footerLinks {
+  font-size: 10px;
+  color: #003399;
+  margin-bottom: 5px;
+}
+.footerCopy {
+  background: #6699CC;
+  background: linear-gradient(to bottom, #7aaedd, #4f81b5);
+  color: #ffffff;
+  font-size: 10px;
+  padding: 5px;
+  border: 1px solid #33547a;
+}

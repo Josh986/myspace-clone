@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=940">
+<title>xX_StarlightEmo_Xx | MySpace</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- ============================================================= -->
+<!-- ===============  EDIT YOUR PROFILE HERE  ==================== -->
+<!-- Everything swappable lives in this one JS object.            -->
+<!-- No build step needed - just edit and refresh the page.       -->
+<!-- ============================================================= -->
+<script>
+var PROFILE = {
+  // ---- Basic identity ----
+  name: "xX_StarlightEmo_Xx",
+  headline: "\"the world is ugly, but you're beautiful to me...\" &#9829;",
+  mood: "emo",
+  moodIcon: "&#9829;", // shows next to the mood
+  photo: "https://cdn.prod.website-files.com/633a38706320c88f5e8c4ac8/6a469e785bcd72c52b70424a_COVER%20IMAGE%20COLLAGE%20CREDIT%20STANLEY%20KILONZO(2).png",
+
+  // ---- General info table ----
+  age: 22,
+  gender: "Female",
+  location: "Los Angeles, CA",
+  status: "Single",
+  zodiac: "Scorpio",
+  lastLogin: "7/13/2026",
+
+  // ---- Online status ----
+  online: true,
+
+  // ---- Visitor counter ----
+  profileViews: "14,892",
+
+  // ---- Profile song (placeholder .mp3) ----
+  song: {
+    title: "My Chemical Romance - Welcome to the Black Parade",
+    src: "song.mp3"
+  },
+
+  // ---- Blurbs ----
+  aboutMe:
+    "hey &lt;3 im just a girl living in a black &amp; white world. i love " +
+    "staying up til 4am, black eyeliner, band tees, and taking pics in my " +
+    "bathroom mirror. music is my LIFE and if you dont get that then we " +
+    "prob wont click. dont be a hater, my comments are always open. " +
+    "xoxo stay beautiful &#9829;&#9829;&#9829;",
+  meet:
+    "anyone who gets the reference in my headline. people who arent fake. " +
+    "guitarists. Gerard Way (pls). someone to split a pair of earbuds with " +
+    "and watch the world burn. NO POSERS.",
+
+  // ---- Interests ----
+  interests: {
+    general: "sleeping, mirror pics, Hot Topic, thrifting, sad movies, rain",
+    music: "MCR, Fall Out Boy, Paramore, Panic! at the Disco, The Used, AFI, Taking Back Sunday",
+    movies: "Donnie Darko, The Nightmare Before Christmas, Edward Scissorhands, Nightmare on Elm St",
+    television: "Invader Zim, Daria, MTV, Adult Swim",
+    books: "The Perks of Being a Wallflower, Go Ask Alice, poetry (mine mostly lol)",
+    heroes: "my mom, Gerard Way, Tim Burton"
+  },
+
+  // ---- Top 8 Friends (name + image) ----
+  friends: [
+    { name: "Tom",            img: "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" },
+    { name: "xXbrokenDollXx", img: "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/132751722/original/6e6f76bc9bfe0271f99b455e042f8227da628f4e/draw-pixel-art-of-your-characters.png" },
+    { name: "GhostTownKid",   img: "https://placehold.co/1200x600/e2e8f0/1e293b?text=profile_image_avatar_for_user_GhostTownKid__80x80_" },
+    { name: "razorheart_92",  img: "https://placehold.co/1200x600/e2e8f0/1e293b?text=80x80_pixel_profile_avatar_image_corresponding_to_" },
+    { name: "NeonGrave",      img: "https://placehold.co/1200x600/e2e8f0/1e293b?text=A_small_80x80_pixel_random_profile_avatar_image_as" },
+    { name: "sk8rgrl_666",    img: "https://placehold.co/1200x600/e2e8f0/1e293b?text=80x80_pixel_random_avatar_image_representing_user_" },
+    { name: "VelvetTears",    img: "https://placehold.co/1200x600/e2e8f0/1e293b?text=80x80_pixel_user_avatar_image_for_the_username_Vel" },
+    { name: "the_lost_boy",   img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Profile_avatar_placeholder_large.png/250px-Profile_avatar_placeholder_large.png" }
+  ],
+  friendCount: 337
+};
+</script>
+</head>
+<body>
+
+<!-- ===================== TOP MYSPACE NAV BAR ===================== -->
+<div id="msTopBar">
+  <div class="msTopInner">
+    <span class="msLogo">my<strong>space</strong>.</span>
+    <span class="msTagline">a place for friends</span>
+    <span class="msTopLinks">
+      Home&nbsp;|&nbsp;Browse&nbsp;|&nbsp;Search&nbsp;|&nbsp;Invite&nbsp;|&nbsp;Film&nbsp;|&nbsp;Mail&nbsp;|&nbsp;Blog&nbsp;|&nbsp;Favorites&nbsp;|&nbsp;Forum&nbsp;|&nbsp;Groups&nbsp;|&nbsp;Events&nbsp;|&nbsp;Videos&nbsp;|&nbsp;Music
+    </span>
+  </div>
+</div>
+
+<!-- ===================== MAIN 900px WRAPPER ===================== -->
+<div id="wrapper">
+
+  <!-- ---- Name / headline header ---- -->
+  <div id="nameHeader">
+    <span id="displayName"></span>
+    <span id="onlineBadge"></span>
+  </div>
+  <div id="headline"></div>
+
+  <!-- ---- Two column layout (table-style) ---- -->
+  <table id="layout" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <!-- ================= LEFT COLUMN ================= -->
+      <td id="leftCol" valign="top">
+
+        <!-- Profile photo -->
+        <div class="photoBox">
+          <img id="profilePhoto" src="" alt="profile photo">
+          <div class="photoCaption" id="photoName"></div>
+          <div class="photoMood">Mood: <span id="moodText"></span> <span id="moodIcon"></span></div>
+        </div>
+
+        <!-- Song player -->
+        <div class="module">
+          <div class="moduleHeader">&#9835; Profile Song</div>
+          <div class="moduleBody songBody">
+            <div class="songTitle" id="songTitle"></div>
+            <audio id="songPlayer" controls preload="none">
+              <source id="songSrc" src="" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+        </div>
+
+        <!-- Contact box -->
+        <div class="module">
+          <div class="moduleHeader">Contacting <span id="contactName"></span></div>
+          <div class="moduleBody contactBody">
+            <table class="contactTable" cellpadding="0" cellspacing="0">
+              <tr>
+                <td><a href="#" class="contactLink">&#9993; Send Message</a></td>
+                <td><a href="#" class="contactLink">&#9829; Add to Friends</a></td>
+              </tr>
+              <tr>
+                <td><a href="#" class="contactLink">&#9733; Add to Favorites</a></td>
+                <td><a href="#" class="contactLink">&#9993; Instant Message</a></td>
+              </tr>
+              <tr>
+                <td><a href="#" class="contactLink">&#9993; Forward to Friend</a></td>
+                <td><a href="#" class="contactLink">&#9873; Add to Group</a></td>
+              </tr>
+              <tr>
+                <td><a href="#" class="contactLink">&#9888; Block User</a></td>
+                <td><a href="#" class="contactLink">&#9734; Rank User</a></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- URL box -->
+        <div class="module">
+          <div class="moduleHeader">MySpace URL:</div>
+          <div class="moduleBody urlBody" id="urlBody"></div>
+        </div>
+
+        <!-- Interests -->
+        <div class="module">
+          <div class="moduleHeader">Interests</div>
+          <div class="moduleBody">
+            <table class="infoTable" cellpadding="0" cellspacing="0" id="interestsTable"></table>
+          </div>
+        </div>
+
+        <!-- Details / General -->
+        <div class="module">
+          <div class="moduleHeader">Details</div>
+          <div class="moduleBody">
+            <table class="infoTable" cellpadding="0" cellspacing="0" id="generalTable"></table>
+          </div>
+        </div>
+
+      </td>
+
+      <!-- spacer -->
+      <td class="colGap"></td>
+
+      <!-- ================= RIGHT COLUMN ================= -->
+      <td id="rightCol" valign="top">
+
+        <!-- Network / counter strip -->
+        <div class="statStrip">
+          <span id="lastLoginText"></span>
+          <span class="viewCounter">Profile Views: <span id="viewCount"></span></span>
+        </div>
+
+        <!-- Blurbs -->
+        <div class="module">
+          <div class="moduleHeader">xX_StarlightEmo_Xx's Blurbs</div>
+          <div class="moduleBody blurbBody">
+            <div class="blurbLabel">About me:</div>
+            <div class="blurbText" id="aboutMe"></div>
+            <div class="blurbLabel">Who I'd like to meet:</div>
+            <div class="blurbText" id="meetText"></div>
+          </div>
+        </div>
+
+        <!-- Friend Space -->
+        <div class="module">
+          <div class="moduleHeader"><span id="friendHeaderName"></span>'s Friend Space
+            (<span id="friendCount"></span>)</div>
+          <div class="moduleBody friendBody">
+            <div class="friendSub">
+              <span id="friendTopName"></span> has <strong id="friendCount2"></strong> friends.
+            </div>
+            <div class="topLabel">&#9733; xX_StarlightEmo_Xx's Top 8 &#9733;</div>
+            <table class="friendGrid" cellpadding="0" cellspacing="0" id="friendGrid"></table>
+            <div class="viewAll"><a href="#" class="contactLink">View All of xX_StarlightEmo_Xx's Friends</a></div>
+          </div>
+        </div>
+
+        <!-- Comments -->
+        <div class="module">
+          <div class="moduleHeader">xX_StarlightEmo_Xx's Friends Comments</div>
+          <div class="moduleBody commentBody" id="commentBody"></div>
+        </div>
+
+      </td>
+    </tr>
+  </table>
+
+  <!-- ===================== FOOTER ===================== -->
+  <div id="footer">
+    <div class="footerLinks">
+      About&nbsp;|&nbsp;FAQ&nbsp;|&nbsp;Terms&nbsp;|&nbsp;Privacy&nbsp;|&nbsp;Safety Tips&nbsp;|&nbsp;Contact MySpace&nbsp;|&nbsp;Promote&nbsp;|&nbsp;Advertise&nbsp;|&nbsp;MySpace International
+    </div>
+    <div class="footerCopy">MySpace v3.0 &nbsp;|&nbsp; &copy; 2006 MySpace Inc. All Rights Reserved</div>
+  </div>
+
+</div><!-- /wrapper -->
+
+<!-- ===================== INJECTION SCRIPT ===================== -->
+<script>
+(function () {
+  var P = PROFILE;
+
+  function setHTML(id, html) {
+    var el = document.getElementById(id);
+    if (el) el.innerHTML = html;
+  }
+
+  // ---- Header + identity ----
+  document.title = P.name + " | MySpace";
+  setHTML("displayName", P.name);
+  setHTML("headline", P.headline);
+  setHTML("photoName", P.name);
+  setHTML("contactName", P.name);
+  setHTML("friendHeaderName", P.name);
+  setHTML("friendTopName", P.name);
+  setHTML("moodText", P.mood);
+  setHTML("moodIcon", P.moodIcon || "");
+
+  // ---- Photo ----
+  document.getElementById("profilePhoto").src = P.photo;
+
+  // ---- Online badge ----
+  if (P.online) {
+    setHTML("onlineBadge",
+      '<span class="onlineWrap"><span class="blinkDot"></span>Online Now!</span>');
+  } else {
+    setHTML("onlineBadge", '<span class="offlineWrap">Offline</span>');
+  }
+
+  // ---- Song ----
+  setHTML("songTitle", "&#9835; " + P.song.title);
+  document.getElementById("songSrc").src = P.song.src;
+  var player = document.getElementById("songPlayer");
+  if (player && player.load) player.load();
+
+  // ---- URL ----
+  setHTML("urlBody",
+    "myspace.com/" + P.name.toLowerCase().replace(/[^a-z0-9_]/g, ""));
+
+  // ---- Stats ----
+  setHTML("viewCount", P.profileViews);
+  setHTML("lastLoginText", "Last Login: " + P.lastLogin);
+
+  // ---- Blurbs ----
+  setHTML("aboutMe", P.aboutMe);
+  setHTML("meetText", P.meet);
+
+  // ---- Interests table ----
+  var interestRows = [
+    ["General", P.interests.general],
+    ["Music", P.interests.music],
+    ["Movies", P.interests.movies],
+    ["Television", P.interests.television],
+    ["Books", P.interests.books],
+    ["Heroes", P.interests.heroes]
+  ];
+  var iHTML = "";
+  for (var i = 0; i < interestRows.length; i++) {
+    iHTML += '<tr><td class="infoLabel">' + interestRows[i][0] + ':</td>' +
+             '<td class="infoValue">' + interestRows[i][1] + '</td></tr>';
+  }
+  setHTML("interestsTable", iHTML);
+
+  // ---- General table ----
+  var genRows = [
+    ["Age", P.age],
+    ["Gender", P.gender],
+    ["Status", P.status],
+    ["Zodiac", P.zodiac],
+    ["Location", P.location]
+  ];
+  var gHTML = "";
+  for (var g = 0; g < genRows.length; g++) {
+    gHTML += '<tr><td class="infoLabel">' + genRows[g][0] + ':</td>' +
+             '<td class="infoValue">' + genRows[g][1] + '</td></tr>';
+  }
+  setHTML("generalTable", gHTML);
+
+  // ---- Friend count ----
+  setHTML("friendCount", P.friendCount);
+  setHTML("friendCount2", P.friendCount);
+
+  // ---- Top 8 grid (4 per row) ----
+  var fHTML = "";
+  for (var f = 0; f < P.friends.length; f++) {
+    if (f % 4 === 0) fHTML += "<tr>";
+    fHTML += '<td class="friendCell">' +
+               '<a href="#"><img src="' + P.friends[f].img + '" alt="' +
+                 P.friends[f].name + '" class="friendPic"></a>' +
+               '<div class="friendName"><a href="#" class="contactLink">' +
+                 P.friends[f].name + '</a></div>' +
+             '</td>';
+    if (f % 4 === 3) fHTML += "</tr>";
+  }
+  if (P.friends.length % 4 !== 0) fHTML += "</tr>";
+  setHTML("friendGrid", fHTML);
+
+  // ---- Fake comments ----
+  var comments = [
+    { user: P.friends[1] ? P.friends[1].name : "friend", text: "omg ur pics r so cute!! miss u &lt;3 comment back!!" },
+    { user: P.friends[2] ? P.friends[2].name : "friend", text: "we NEED to go to warped tour this summer!!! &#9829;" },
+    { user: P.friends[4] ? P.friends[4].name : "friend", text: "thx for the add babe. love the layout &#9733;" }
+  ];
+  var cHTML = "";
+  for (var c = 0; c < comments.length; c++) {
+    var av = P.friends[(c * 2 + 1) % P.friends.length];
+    cHTML += '<div class="commentRow">' +
+               '<div class="commentAvatar"><img src="' + av.img + '" alt=""></div>' +
+               '<div class="commentContent">' +
+                 '<div class="commentUser"><a href="#" class="contactLink">' +
+                   comments[c].user + '</a></div>' +
+                 '<div class="commentText">' + comments[c].text + '</div>' +
+               '</div>' +
+               '<div class="commentClear"></div>' +
+             '</div>';
+  }
+  setHTML("commentBody", cHTML);
+})();
+</script>
+
+</body>
+</html>
